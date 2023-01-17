@@ -34,10 +34,15 @@ jobs:
 
     - name: Heroku Deploy
       uses: AkhileshNS/heroku-deploy@v3.12.12
-      with:
+      env:
         # This will be used for authentication. You can find it in your heroku homepage account settings
-        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        HEROKU-API-KEY: ${{ secrets.HEROKU_API_KEY }}
+      run:
+        heroku plugins: install java
+        heroku deploy: jar build/libs/spring-todo-app-0.0.1-SNAPSHOT.jar --app glasshalffullstack--api
+
+
         # Email that you use with heroku
-        heroku_email: "adalynecummins@gmail.com"
+        # heroku_email: "adalynecummins@gmail.com"
         # The appname to use for deploying/updating
-        heroku_app_name: "glasshalffullstack--api"
+        # heroku_app_name: "glasshalffullstack--api"
