@@ -31,3 +31,13 @@ jobs:
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
+
+    - name: Heroku Deploy
+      uses: AkhileshNS/heroku-deploy@v3.12.12
+      with:
+        # This will be used for authentication. You can find it in your heroku homepage account settings
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        # Email that you use with heroku
+        heroku_email: adalynecummins@gmail.com
+        # The appname to use for deploying/updating
+        heroku_app_name: glasshalffullstack--api
