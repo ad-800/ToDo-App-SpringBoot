@@ -33,7 +33,7 @@ jobs:
         arguments: build
 
     - name: Heroku Deploy
-      uses: AkhileshNS/heroku-deploy@v3.12.12
+      uses: CDNievas/heroku-action@v1.0
       with:
         # This will be used for authentication. You can find it in your heroku homepage account settings
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
