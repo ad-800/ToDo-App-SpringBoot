@@ -9,7 +9,7 @@ import com.group2.springtodoapp.exception.TaskNotFoundException;
 import java.util.List;
 
 @RestController
-@CrossOrigin("https://glasshalffullstack-web.herokuapp.com0")
+@CrossOrigin("https://glasshalffullstack-web.herokuapp.com")
 public class TaskController {
     @Autowired
     private TaskRepo taskRepo;
